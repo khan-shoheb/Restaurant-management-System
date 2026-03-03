@@ -22,31 +22,36 @@ export default function SuperAdminLayout({ children }) {
     window.location.href = "/admin-login";
   };
   return (
-    <div className="min-h-screen flex bg-[#f7f8fa]">
+    <div className="min-h-screen flex flex-col sm:flex-row bg-[#f7f8fa]">
       {/* Sidebar */}
-      <aside className="w-64 bg-white shadow-lg p-6 flex flex-col gap-4 border-r">
-        <h2 className="text-2xl font-extrabold mb-8 text-red-600">Super Admin</h2>
-        <nav className="flex flex-col gap-2">
+      <aside className="w-full sm:w-64 bg-white shadow-lg p-4 sm:p-6 flex flex-row sm:flex-col gap-2 sm:gap-4 border-b sm:border-b-0 sm:border-r relative">
+        <div className="flex flex-row sm:flex-col items-center sm:items-start justify-between sm:justify-start w-full">
+          <h2 className="text-xl sm:text-2xl font-extrabold mb-0 sm:mb-8 text-red-600">Super Admin</h2>
+        </div>
+        <nav className="flex flex-row sm:flex-col gap-2 w-full">
           {sidebarNav.map(item => (
             <button
               key={item.label}
-              className={`flex items-center gap-3 px-4 py-2 rounded-lg font-bold transition ${currentPath === item.route ? "bg-red-100 text-red-600" : "hover:bg-gray-100 text-gray-700 font-medium"}`}
+              className={`flex items-center gap-2 sm:gap-3 px-2 sm:px-4 py-2 rounded-lg font-bold transition w-full ${currentPath === item.route ? "bg-red-100 text-red-600" : "hover:bg-gray-100 text-gray-700 font-medium"}`}
               onClick={() => navigate(item.route)}
             >
               {item.icon}
-              <span>{item.label}</span>
+              <span className="hidden sm:inline">{item.label}</span>
+              <span className="sm:hidden text-xs">{item.label[0]}</span>
             </button>
           ))}
         </nav>
+        {/* Logout button: bottom for desktop, right for mobile */}
         <button
           onClick={handleLogout}
-          className="mt-auto bg-red-600 text-white px-4 py-2 rounded font-semibold hover:bg-red-700 transition"
+          className="bg-red-600 text-white px-3 py-2 rounded font-semibold hover:bg-red-700 transition sm:absolute sm:bottom-6 sm:left-6 sm:right-6 sm:w-auto w-full mt-0 sm:mt-0"
+          style={{ marginTop: 'auto' }}
         >
           Logout
         </button>
       </aside>
       {/* Main Content */}
-      <main className="flex-1 p-10">{children}</main>
+      <main className="flex-1 p-2 sm:p-6 md:p-10">{children}</main>
     </div>
   );
 }
