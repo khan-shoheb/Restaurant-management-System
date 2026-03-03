@@ -196,6 +196,7 @@ export default function RecipeManagement() {
                 src={r.image}
                 alt={r.name}
                 className="rounded-lg mb-3 h-40 object-cover w-full"
+                onError={e => { e.currentTarget.src = 'https://via.placeholder.com/400x200?text=No+Image'; }}
               />
               <h3 className="text-lg font-semibold text-gray-800 mb-1">{r.name}</h3>
               <p className="text-sm text-gray-500 mb-1">Category: <span className="font-medium text-gray-700">{r.category}</span></p>
