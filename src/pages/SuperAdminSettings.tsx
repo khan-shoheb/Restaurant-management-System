@@ -43,7 +43,7 @@ export default function SuperAdminSettings() {
 
   return (
     <SuperAdminLayout>
-      <div className="flex-1 p-10">
+      <div className="flex-1 p-2 sm:p-6 md:p-10">
         <h1 className="text-3xl font-extrabold text-gray-900 mb-2">System Settings</h1>
         <p className="text-gray-500 mb-8">Configure platform-wide settings</p>
         <div className="flex flex-col gap-4 w-full">

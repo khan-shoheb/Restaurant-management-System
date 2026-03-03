@@ -29,10 +29,10 @@ export default function SuperAdminRevenue() {
   const lowestMonthFormatted = (12000).toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
   return (
     <SuperAdminLayout>
-      <div className="flex-1 p-10">
+      <div className="flex-1 p-2 sm:p-6 md:p-10">
         <h1 className="text-3xl font-extrabold text-gray-900 mb-2">Revenue</h1>
         <p className="text-gray-500 mb-8">Financial overview and analytics</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 sm:gap-8 mb-8">
           <div className="bg-white rounded-xl shadow p-6 flex flex-col items-center border">
             <span className="bg-green-100 p-4 rounded-xl mb-2">
               <svg width="32" height="32" fill="none" viewBox="0 0 24 24"><path stroke="#22c55e" strokeWidth="2" d="M12 3v18m0 0c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z"/></svg>
@@ -62,7 +62,7 @@ export default function SuperAdminRevenue() {
             <div className="text-3xl font-extrabold text-gray-900 mt-2">{profitMargin}%</div>
           </div>
         </div>
-        <div className="bg-white rounded-xl shadow p-8 border mb-12">
+        <div className="bg-white rounded-xl shadow p-2 sm:p-8 border mb-12">
           <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
             <span className="text-yellow-500">📊</span> Monthly Revenue Chart
           </h2>

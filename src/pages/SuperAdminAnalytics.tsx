@@ -21,10 +21,10 @@ const salesData = [
 export default function SuperAdminAnalytics() {
   return (
     <SuperAdminLayout>
-      <div className="flex-1 p-10">
+      <div className="flex-1 p-2 sm:p-6 md:p-10">
         <h1 className="text-3xl font-extrabold text-gray-900 mb-2">Analytics</h1>
         <p className="text-gray-500 mb-8">Sales, orders, and performance overview</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 sm:gap-8 mb-8">
           <div className="bg-white rounded-xl shadow p-6 flex flex-col items-center border">
             <span className="bg-blue-100 p-4 rounded-xl mb-2">
               <BarChart2 className="h-8 w-8 text-blue-600" />
@@ -54,7 +54,7 @@ export default function SuperAdminAnalytics() {
             <div className="text-3xl font-extrabold text-purple-700 mt-2">May</div>
           </div>
         </div>
-        <div className="bg-white rounded-xl shadow p-8 border mb-12">
+        <div className="bg-white rounded-xl shadow p-2 sm:p-8 border mb-12">
           <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
             <span className="text-blue-500">📈</span> Sales & Orders Trend
           </h2>
