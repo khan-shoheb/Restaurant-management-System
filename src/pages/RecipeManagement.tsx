@@ -89,7 +89,7 @@ export default function RecipeManagement() {
         const reader = new FileReader();
         reader.onloadend = () => {
           if (typeof reader.result === "string") {
-            setForm(f => ({ ...f, image: reader.result }));
+            setForm(f => ({ ...f, image: reader.result as string }));
           }
         };
         reader.readAsDataURL(files[0]);
@@ -104,7 +104,7 @@ export default function RecipeManagement() {
         const reader = new FileReader();
         reader.onloadend = () => {
             if (typeof reader.result === "string") {
-                setEditForm(f => ({ ...f, image: reader.result }));
+                setEditForm(f => ({ ...f, image: reader.result as string }));
             }
         };
         reader.readAsDataURL(files[0]);
